@@ -1,7 +1,6 @@
 # 📚 Corso Python — Materiale & Esercizi
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue.svg?logo=python\&logoColor=white)
-![GitHub Downloads (all releases)](https://img.shields.io/github/downloads/marius93rm/PythonMM/total.svg?style=for-the-badge)
 ![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-ff69b4.svg)
 
 ---
