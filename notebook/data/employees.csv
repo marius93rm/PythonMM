@@ -1,0 +1,6 @@
+employee_id,first_name,last_name,department,role,hire_date
+101,Alice,Rossi,Sales,Manager,2019-03-12
+102,Bob,Bianchi,Engineering,Developer,2021-07-01
+103,Chiara,Verdi,HR,Analyst,2020-11-05
+104,Diego,Neri,Engineering,Developer,2018-02-20
+105,Elena,Ferri,Sales,Analyst,2022-06-15
