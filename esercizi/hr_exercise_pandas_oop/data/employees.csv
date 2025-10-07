@@ -1,0 +1,7 @@
+employee_id,first_name,last_name,role,level,department,cost_center,contract_type,base_salary,bonus_percent,workload_percent,currency,gender,hire_date
+1,Alice,Rossi,Developer,2,Engineering,CC100,employee,60000,10,1.0,EUR,F,2021-03-10
+2,Bob,Bianchi,Manager,3,Engineering,CC100,employee,80000,15,1.0,EUR,M,2019-07-01
+3,Carla,Verdi,SalesRep,1,Sales,CC200,employee,50000,20,1.0,EUR,F,2022-01-15
+4,Diego,Neri,Contractor,2,Engineering,CC100,contractor,40000,0,0.8,EUR,M,2024-05-01
+5,Elena,Gialli,HRGeneralist,1,HR,CC300,employee,45000,5,1.0,EUR,F,2020-09-20
+6,Franco,Marroni,Manager,3,Sales,CC200,employee,70000,12,1.0,EUR,M,2018-11-11
