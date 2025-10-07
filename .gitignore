@@ -3,4 +3,8 @@
 /notebook/include
 /notebook/lib
 /notebook/share
-
+/esercizi/hr-report/notebook/bin
+/esercizi/hr-report/notebook/etc
+/esercizi/hr-report/notebook/lib
+/esercizi/hr-report/notebook/share
+.DS_Store
