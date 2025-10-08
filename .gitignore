@@ -8,3 +8,6 @@
 /esercizi/hr-report/notebook/lib
 /esercizi/hr-report/notebook/share
 .DS_Store
+/notebook/.ipynb_checkpoints
+/esercizi/hr-report/notebook/.ipynb_checkpoints
+/.vscode
