@@ -51,9 +51,11 @@ PYTHONMM/
 │   │   ├── brief_10_randomuser.pdf
 │   │   ├── esercizio_10_randomuser_scheletro.py
 │   │   └── soluzione_10_randomuser.py
-│   └── 08-todo/
-│       ├── esercizio_11_todo_milestone.py
-│       └── soluzione_11_todo_milestone.py
+│   ├── 08-todo/
+│   │   ├── esercizio_11_todo_milestone.py
+│   │   └── soluzione_11_todo_milestone.py
+│   └── 09-logger-universale/
+│       └── esercizio_12_logger_universale.py
 │
 ├── 📂 slide/                  # Slide numerate del corso
 │   ├── 01-introduzione-python.pdf
@@ -85,3 +87,14 @@ PYTHONMM/
 📌 Ogni risorsa porta un **prefisso numerico** che indica l'ordine consigliato di studio: le slide guidano la teoria mentre le cartelle in `esercizi/` raccolgono attività pratiche e progetti con soluzioni e materiali di supporto.
 
 Troverai **slide, PDF, esercizi con soluzioni e mini-progetti professionali**, pensati per imparare in modo graduale ma con uno sguardo al mondo reale.
+
+---
+
+## 🧭 Indice degli argomenti
+
+1. **Primi passi con Python** — fondamentali del linguaggio, strutture dati essenziali, funzioni e generatori (`01-fondamenti-funzioni/`, slide 01-03).
+2. **Programmazione ad oggetti e principi di progettazione** — classi, OOP avanzata, SOLID e design pattern introdotti nelle slide 04-06.
+3. **Sviluppo di applicazioni** — panoramica su web, API e automazione (`04-piattaforma-notifiche/`, `05-sistema-hr/`, slide 07-08).
+4. **Design pattern e architetture riusabili** — esercizio pratico sul pattern Singleton e logging centralizzato (`09-logger-universale/`, collegato alle slide 05-06).
+5. **Visualizzazione e analisi dati** — utilizzo di Matplotlib e Pandas (`03-hr-report/`, `06-hr-analytics/`, slide 09-11).
+6. **Progetti guidati** — esercizi applicativi completi come RandomUser e To-Do (`07-randomuser/`, `08-todo/`) con materiale extra di supporto (`extra/`, slide 12).
