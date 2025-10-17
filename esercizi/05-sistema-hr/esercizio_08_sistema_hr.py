@@ -1,5 +1,5 @@
 
-# esercizio2_hr_system.py
+# esercizio_08_sistema_hr.py
 # ============================================================
 # Esercizio 2 — Sistema di Gestione Risorse Umane (fino alla slide 33)
 # Obiettivo: usare OOP (classi, metodi, __init__/__str__/__repr__, attributi di
