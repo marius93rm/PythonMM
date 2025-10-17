@@ -11,17 +11,17 @@ Obiettivo:
 
 Come lavorare:
 1) Completa i TODO dentro le funzioni (non cambiare firme e nomi).
-2) Lancia i test: `python report_hr.py --test` (devono diventare verdi).
-3) Esegui la pipeline completa: `python report_hr.py` (usa cartella data/).
+2) Lancia i test: `python esercizio_06_hr_report.py --test` (devono diventare verdi).
+3) Esegui la pipeline completa: `python esercizio_06_hr_report.py` (usa cartella data/).
 
 Struttura attesa del progetto:
-hr-report/
+03-hr-report/
   data/
     employees.csv
     salaries.csv
     performance.csv
   output/
-  report_hr.py
+  esercizio_06_hr_report.py
 """
 
 from __future__ import annotations

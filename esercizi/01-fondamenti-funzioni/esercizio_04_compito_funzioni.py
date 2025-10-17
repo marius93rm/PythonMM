@@ -1,4 +1,4 @@
-# compito_20_funzioni.py
+# esercizio_04_compito_funzioni.py
 # ============================================================
 # 20 funzioni da implementare + test runner.
 # I test sono pensati per dire chiaramente:

@@ -5,7 +5,7 @@ Implementare un mini-sistema HR che unisce **OOP** (classi, ereditarietà, ABC, 
 I test (`tests_hr.py`) sono già pronti: non modificarli. Eseguili con:
 
 ```bash
-python hr_app.py
+python esercizio_09_hr_app.py
 # poi premi Invio
 ```
 

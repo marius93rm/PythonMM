@@ -1,4 +1,4 @@
-# milestone_todo_project.py
+# soluzione_11_todo_milestone.py
 # Progetto a step: "Mini To‑Do Manager" con milestones progressive.
 #
 # OBIETTIVO

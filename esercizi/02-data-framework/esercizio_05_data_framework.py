@@ -13,7 +13,7 @@ Come usare
 ----------
 1) Completa il codice nelle sezioni contrassegnate con "TODO (M#)".
 2) Esegui il file da terminale:
-     python data_framework_exercise.py
+     python esercizio_05_data_framework.py
    Premi Invio quando richiesto: verranno lanciati i test e alla fine vedrai
    quante verifiche hai superato.
 3) Lavora milestone per milestone: alla fine di ciascuna milestone, riesegui i test.

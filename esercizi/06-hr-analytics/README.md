@@ -24,7 +24,7 @@ pip install -r requirements.txt
 
 ## 2) Struttura cartelle
 ```
-hr_exercise_pandas_oop/
+06-hr-analytics/
 ├─ data/
 │  ├─ employees.csv
 │  ├─ departments.csv
@@ -32,7 +32,7 @@ hr_exercise_pandas_oop/
 ├─ hr_domain.py          # classi e dominio OOP
 ├─ hr_analysis.py        # funzioni pandas per analisi e report
 ├─ tests_hr.py           # test
-├─ hr_app.py             # entrypoint: premi Invio per lanciare i test
+├─ esercizio_09_hr_app.py  # entrypoint: premi Invio per lanciare i test
 ├─ requirements.txt
 └─ README.md
 ```
@@ -40,6 +40,6 @@ hr_exercise_pandas_oop/
 ## 3) Eseguire i test
 Nell'ambiente virtuale attivo:
 ```bash
-python hr_app.py
+python esercizio_09_hr_app.py
 ```
 Quando richiesto, **premi Invio** per eseguire i test. Al termine, trovi i report in `./reports`.
