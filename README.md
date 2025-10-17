@@ -10,26 +10,72 @@
 ```
 PYTHONMM/
 │
-├── 📂 esercizi/                # Esercizi guidati e progetti
-│   ├── ⚙️ framework/           
-│   ├── 📊 hr-report/           
-│   ├── 👁️ piattaforma/         
-│   ├── 🧑‍💼 sistema_hr/          
-│   ├── 📝 todo/                
-│   ├── 🐍 esercizi_giorno1.py          
-│   ├── ✅ esercizi_giorno1_sol.py      
-│   ├── 🔄 generatori_slicing_ese.py    
-│   ├── ✅ generatori_slicing_sol.py    
-│   └── ⚡ listCompr.py                 
+├── 📂 esercizi/                # Percorso graduato di esercizi
+│   ├── 01-fondamenti-funzioni/
+│   │   ├── esercizio_01_fondamenti_python.py
+│   │   ├── soluzione_01_fondamenti_python.py
+│   │   ├── esercizio_02_generatori_slicing.py
+│   │   ├── soluzione_02_generatori_slicing.py
+│   │   ├── esercizio_03_list_comprehension.py
+│   │   └── esercizio_04_compito_funzioni.py
+│   ├── 02-data-framework/
+│   │   ├── brief_05_data_framework.pdf
+│   │   ├── esercizio_05_data_framework.py
+│   │   └── soluzione_05_data_framework.py
+│   ├── 03-hr-report/
+│   │   ├── data/
+│   │   ├── notebook/
+│   │   ├── esercizio_06_hr_report.py
+│   │   ├── soluzione_06_hr_report.py
+│   │   ├── supporto_06_hr_report_compendio.pdf
+│   │   └── supporto_06_hr_report_funzioni.pdf
+│   ├── 04-piattaforma-notifiche/
+│   │   ├── esercizio_07_piattaforma_notifiche.py
+│   │   ├── soluzione_07_piattaforma_notifiche.py
+│   │   ├── milestone_07_piattaforma_notifiche.pdf
+│   │   └── supporto_07_piattaforma_notifiche.pdf
+│   ├── 05-sistema-hr/
+│   │   ├── esercizio_08_sistema_hr.py
+│   │   └── soluzione_08_sistema_hr.py
+│   ├── 06-hr-analytics/
+│   │   ├── data/
+│   │   ├── reports/
+│   │   ├── esercizio_09_hr_app.py
+│   │   ├── hr_analysis.py
+│   │   ├── hr_domain.py
+│   │   ├── tests_hr.py
+│   │   ├── requirements.txt
+│   │   ├── README.md
+│   │   └── STUDENT_GUIDE.md
+│   ├── 07-randomuser/
+│   │   ├── brief_10_randomuser.pdf
+│   │   ├── esercizio_10_randomuser_scheletro.py
+│   │   └── soluzione_10_randomuser.py
+│   ├── 08-todo/
+│   │   ├── esercizio_11_todo_milestone.py
+│   │   └── soluzione_11_todo_milestone.py
+│   └── 09-logger-universale/
+│       └── esercizio_12_logger_universale.py
 │
-├── 📂 extra/                   
-│   ├── 📑 oop2altro.pdf
+├── 📂 slide/                  # Slide numerate del corso
+│   ├── 01-introduzione-python.pdf
+│   ├── 02-recap-base.pdf
+│   ├── 03-recap-avanzato.pdf
+│   ├── 04-programmazione-oggetti.pdf
+│   ├── 05-python-avanzato-argomenti-chiave.pdf
+│   ├── 06-automazione-testing.pdf
+│   ├── 07-sviluppo-web-python.pdf
+│   ├── 08-sviluppo-api.pdf
+│   ├── 09-visualizzazione-matplotlib.pdf
+│   ├── 10-analisi-dati-pandas.pdf
+│   ├── 11-lezione-pandas.pdf
+│   └── 12-cheatsheet-sqlite.pdf
+│
+├── 📂 extra/
 │   ├── 📑 Pandas con esempi.pdf
 │   ├── 📑 SOLID.pdf
-│   ├── 📑 Lezione Pandas.pdf
-│   ├── 📑 Programmazione a Oggetti (OOP) in Python.pdf
-│   ├── 📑 Recap.pdf
-│   └── 📑 slideCorsoPy.pdf
+│   ├── 📑 oop2altro.pdf
+│   └── 🐍 pjwt.py
 │
 └── 📖 README.md
 ```
@@ -37,4 +83,18 @@ PYTHONMM/
 ---
 
 💡 Questa repository raccoglie il materiale del **corso Python di Marius Minia**: un percorso che parte dalle basi del linguaggio 🐍 fino a concetti avanzati come **OOP, principi SOLID, design pattern e analisi dati con Pandas**.
+
+📌 Ogni risorsa porta un **prefisso numerico** che indica l'ordine consigliato di studio: le slide guidano la teoria mentre le cartelle in `esercizi/` raccolgono attività pratiche e progetti con soluzioni e materiali di supporto.
+
 Troverai **slide, PDF, esercizi con soluzioni e mini-progetti professionali**, pensati per imparare in modo graduale ma con uno sguardo al mondo reale.
+
+---
+
+## 🧭 Indice degli argomenti
+
+1. **Primi passi con Python** — fondamentali del linguaggio, strutture dati essenziali, funzioni e generatori (`01-fondamenti-funzioni/`, slide 01-03).
+2. **Programmazione ad oggetti e principi di progettazione** — classi, OOP avanzata, SOLID e design pattern introdotti nelle slide 04-06.
+3. **Sviluppo di applicazioni** — panoramica su web, API e automazione (`04-piattaforma-notifiche/`, `05-sistema-hr/`, slide 07-08).
+4. **Design pattern e architetture riusabili** — esercizio pratico sul pattern Singleton e logging centralizzato (`09-logger-universale/`, collegato alle slide 05-06).
+5. **Visualizzazione e analisi dati** — utilizzo di Matplotlib e Pandas (`03-hr-report/`, `06-hr-analytics/`, slide 09-11).
+6. **Progetti guidati** — esercizi applicativi completi come RandomUser e To-Do (`07-randomuser/`, `08-todo/`) con materiale extra di supporto (`extra/`, slide 12).

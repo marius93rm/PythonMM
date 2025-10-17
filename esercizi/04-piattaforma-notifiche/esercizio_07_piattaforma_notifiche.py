@@ -1,8 +1,44 @@
-# notifications_platform_exercise_solution.py
+# esercizio_07_piattaforma_notifiche.py
 # ==============================================
 # ESERCIZIO 2 — Piattaforma di Notifiche (Observer Pattern)
-# Soluzione completa M1..M8
 # ==============================================
+#
+# Obiettivo
+# ---------
+# Progettare e implementare una mini piattaforma di notifiche in stile social
+# che sfrutta i concetti OOP visti nelle slide:
+# - Incapsulamento, ereditarietà, polimorfismo
+# - Classi astratte (ABC) e mixin
+# - Metodi speciali (__repr__, __len__, __contains__, __eq__)
+# - Observer pattern (Subject/Observable + Observer)
+# - Strategy pattern leggero per canali di notifica
+# - Composizione (Inbox che raccoglie Notifiche)
+# - Persistenza JSON/CSV (bonus)
+#
+# Come lavorare
+# -------------
+# - Completa le funzioni con i TODO per milestone, in ordine.
+# - Esegui questo file: vedrai il report "Milestones superate: X/..".
+# - Ogni milestone sblocca la successiva.
+# - Mantieni il codice pulito e mantenibile.
+#
+# Requisiti tecnici
+# -----------------
+# - Solo standard library (json, csv, datetime, abc, dataclasses, typing, os, tempfile).
+# - Python >= 3.10 consigliato.
+#
+# Milestones
+# ----------
+# M1) Modello base e follow                       (User, Post, follow/unfollow, post())
+# M2) Observer: Observable + notify()            (attach/detach, notify followers su nuovo Post)
+# M3) Canali di notifica (polimorfismo/Strategy) (Email/SMS/Push implementano send())
+# M4) Inbox + metodi speciali                    (__len__, __contains__, __repr__)
+# M5) Filtri/ricerche e statistiche              (by_user, by_channel, unseen_count)
+# M6) Persistenza JSON/CSV                        (export/import notifiche)
+# M7) Mixin di logging                            (LoggableMixin per tracciare eventi)
+# M8) Confronti/ordinamenti                       (__eq__ sulle notifiche, ordinamento per data)
+#
+# NOTA: I test sono "tolleranti": se un TODO non è implementato, il test fallisce ma l'esecuzione continua.
 
 from __future__ import annotations
 
@@ -11,7 +47,6 @@ from datetime import datetime
 from typing import Optional, Iterable, Protocol, runtime_checkable, List, Dict
 from abc import ABC, abstractmethod
 import json, csv, os, tempfile
-
 
 # =============================================================
 # DOMINIO
@@ -39,7 +74,7 @@ class Notification:
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Notification):
             return NotImplemented
-        # stesso canale, destinatario e messaggio => notifica uguale
+        # due notifiche sono uguali se stesso canale, destinatario e messaggio
         return (self.channel, self.to, self.message) == (other.channel, other.to, other.message)
 
     def __repr__(self) -> str:
@@ -52,96 +87,44 @@ class Inbox:
     def __init__(self) -> None:
         self._items: List[Notification] = []
 
-    # M4: dunder
+    # TODO(M4): implementa __len__ (numero notifiche)
     def __len__(self) -> int:
-        return len(self._items)
+        raise NotImplementedError
 
+    # TODO(M4): implementa __contains__ per: notif in inbox
     def __contains__(self, item: Notification) -> bool:
-        # equality definita in Notification.__eq__
-        return any(n == item for n in self._items)
+        raise NotImplementedError
 
-    # API base
+    # TODO(M4): aggiungi add() per inserire una notifica
     def add(self, notif: Notification) -> None:
-        self._items.append(notif)
+        raise NotImplementedError
 
-    # M5: filtri/ricerche/stat
+    # TODO(M5): filtri base
     def by_user(self, username: str) -> List[Notification]:
-        return [n for n in self._items if n.to == username]
+        """Ritorna le notifiche indirizzate a 'username'."""
+        raise NotImplementedError
 
     def by_channel(self, channel: str) -> List[Notification]:
-        ch = channel.lower()
-        return [n for n in self._items if n.channel.lower() == ch]
+        """Ritorna le notifiche per canale."""
+        raise NotImplementedError
 
     def unseen_count(self) -> int:
-        return sum(1 for n in self._items if not n.seen)
+        """Numero di notifiche non viste."""
+        raise NotImplementedError
 
-    # M6: persistenza JSON/CSV (con dedupe su (channel,to,message))
+    # TODO(M6): persistenza JSON/CSV
     def export_json(self, path: str) -> None:
-        payload = []
-        for n in self._items:
-            d = asdict(n)
-            d["created_at"] = n.created_at.isoformat()
-            payload.append(d)
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(payload, f, ensure_ascii=False, indent=2)
+        raise NotImplementedError
 
     def import_json(self, path: str) -> int:
-        if not os.path.exists(path):
-            return 0
-        with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-
-        sigs = {(n.channel, n.to, n.message) for n in self._items}
-        added = 0
-        for d in data:
-            ch = d.get("channel", "")
-            to = d.get("to", "")
-            msg = d.get("message", "")
-            sig = (ch, to, msg)
-            if sig in sigs:
-                continue
-            ts = d.get("created_at")
-            try:
-                created = datetime.fromisoformat(ts) if ts else datetime.utcnow()
-            except Exception:
-                created = datetime.utcnow()
-            seen = bool(d.get("seen", False))
-            self._items.append(Notification(ch, to, msg, created, seen))
-            sigs.add(sig)
-            added += 1
-        return added
+        """Ritorna quante notifiche nuove ha importato (dedupe su (channel,to,message))."""
+        raise NotImplementedError
 
     def export_csv(self, path: str) -> None:
-        with open(path, "w", encoding="utf-8", newline="") as f:
-            w = csv.writer(f)
-            w.writerow(["channel", "to", "message", "created_at", "seen"])
-            for n in self._items:
-                w.writerow([n.channel, n.to, n.message, n.created_at.isoformat(), int(n.seen)])
+        raise NotImplementedError
 
     def import_csv(self, path: str) -> int:
-        if not os.path.exists(path):
-            return 0
-        with open(path, "r", encoding="utf-8") as f:
-            r = csv.DictReader(f)
-            sigs = {(n.channel, n.to, n.message) for n in self._items}
-            added = 0
-            for row in r:
-                ch = row.get("channel", "")
-                to = row.get("to", "")
-                msg = row.get("message", "")
-                sig = (ch, to, msg)
-                if sig in sigs:
-                    continue
-                ts = row.get("created_at") or ""
-                try:
-                    created = datetime.fromisoformat(ts)
-                except Exception:
-                    created = datetime.utcnow()
-                seen = str(row.get("seen", "0")).strip() in ("1", "true", "True", "yes", "y")
-                self._items.append(Notification(ch, to, msg, created, seen))
-                sigs.add(sig)
-                added += 1
-        return added
+        raise NotImplementedError
 
 
 # =============================================================
@@ -153,20 +136,19 @@ class Observable:
     def __init__(self) -> None:
         self._observers: set[str] = set()
 
-    # M2: attach/detach/observers
+    # TODO(M2): implementa attach/detach/observers
     def attach(self, username: str) -> None:
-        self._observers.add(username)
+        raise NotImplementedError
 
     def detach(self, username: str) -> None:
-        self._observers.discard(username)
+        raise NotImplementedError
 
     def observers(self) -> List[str]:
-        return sorted(self._observers)
+        raise NotImplementedError
 
-    # M2: notify su nuovo Post. Ritorna elenco username notificati.
+    # TODO(M2): notify su nuovo Post. Ritorna elenco username notificati.
     def notify(self, post: Post) -> List[str]:
-        # M2 si limita a restituire la lista degli osservatori (consegna canali verrà in M3)
-        return self.observers()
+        raise NotImplementedError
 
 
 @runtime_checkable
@@ -178,22 +160,21 @@ class Notifier(Protocol):
 
 class EmailNotifier:
     channel = "email"
-    # M3: implementa send()
+    # TODO(M3): implementa send()
     def send(self, to: str, message: str) -> Notification:
-        # qui simuleremmo l'invio email; ritorniamo l'oggetto Notification
-        return Notification(self.channel, to, message)
+        raise NotImplementedError
 
 
 class SMSNotifier:
     channel = "sms"
     def send(self, to: str, message: str) -> Notification:
-        return Notification(self.channel, to, message)
+        raise NotImplementedError
 
 
 class PushNotifier:
     channel = "push"
     def send(self, to: str, message: str) -> Notification:
-        return Notification(self.channel, to, message)
+        raise NotImplementedError
 
 
 class LoggableMixin:
@@ -201,9 +182,9 @@ class LoggableMixin:
     def __init__(self) -> None:
         self._log: List[str] = []
 
-    # M7: metodo log()
+    # TODO(M7): metodo log()
     def log(self, event: str) -> None:
-        self._log.append(f"{datetime.utcnow().isoformat()} {event}")
+        raise NotImplementedError
 
     def get_log(self) -> List[str]:
         return list(self._log)
@@ -218,26 +199,21 @@ class User(LoggableMixin, Observable):
         self.preferred: Notifier = preferred or EmailNotifier()  # default
         self.inbox = Inbox()
 
-    # M1: follow/unfollow altri utenti
+    # TODO(M1): follow/unfollow altri utenti
     def follow(self, other: "User") -> None:
-        other.attach(self.username)
-        self.log(f"follow {other.username}")
+        """Segui 'other': ti registri come observer dei suoi post."""
+        raise NotImplementedError
 
     def unfollow(self, other: "User") -> None:
-        other.detach(self.username)
-        self.log(f"unfollow {other.username}")
+        raise NotImplementedError
 
-    # M1: post() crea Post (niente notify qui; M2 lo chiama esplicitamente)
+    # TODO(M1): post() crea Post e scatena notify()
     def post(self, content: str) -> Post:
-        self.log("post")
-        return Post(author=self.username, content=content)
+        raise NotImplementedError
 
-    # M3: ricevi una notifica tramite il canale preferito
+    # TODO(M3): ricevi una notifica tramite il canale preferito
     def receive(self, message: str) -> Notification:
-        notif = self.preferred.send(self.username, message)
-        self.inbox.add(notif)
-        self.log(f"receive via {notif.channel}")
-        return notif
+        raise NotImplementedError
 
 
 # =============================================================
@@ -249,6 +225,9 @@ def _safe_test(name: str, fn):
         fn()
         print(f"✅ {name}")
         return True
+    except NotImplementedError:
+        print(f"❌ {name} — TODO non ancora implementato")
+        return False
     except AssertionError as e:
         print(f"❌ {name} — Test fallito: {e}")
         return False
@@ -331,8 +310,7 @@ def test_m7():
     u = User("alice")
     u.log("login")
     u.log("follow bob")
-    lg = " ".join(u.get_log())
-    assert "login" in lg and "follow bob" in lg
+    assert "login" in u.get_log() and "follow bob" in u.get_log()
 
 
 def test_m8():
@@ -342,9 +320,8 @@ def test_m8():
     assert a == b and a != c
     inbox = Inbox()
     inbox.add(c); inbox.add(a); inbox.add(b)
-    # ordinamento per data (facoltativo)
-    sorted_by_time = sorted(inbox._items, key=lambda n: n.created_at)
-    assert len(sorted_by_time) == 3
+    # dedupe logica (se implementata in import) non è richiesta qui; solo verifica comparazioni
+    # ordinabilità per data (facoltativo): sorted(inbox._items, key=lambda n: n.created_at)
 
 
 def run_all_tests():
@@ -363,7 +340,7 @@ def run_all_tests():
         ok += 1 if _safe_test(name, fn) else 0
     print(f"\n▶️  Milestones superate: {ok}/{len(tests)}")
     if ok < len(tests):
-        print("Suggerimento: rivedi i TODO non superati.")
+        print("Suggerimento: implementa i TODO in ordine di milestone.")
 
 
 if __name__ == "__main__":

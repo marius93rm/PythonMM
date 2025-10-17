@@ -10,7 +10,7 @@ Milestones:
   5) Export CSV (first,last,email,phone)
 
 Esecuzione (esempio):
-  python progetto_randomuser_scheletro.py --results 100 --nat "us,it,dk" --gender "male,female" --seed "corso123"
+  python esercizio_10_randomuser_scheletro.py --results 100 --nat "us,it,dk" --gender "male,female" --seed "corso123"
 
 Dipendenze:
   pip install requests
