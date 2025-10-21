@@ -1,0 +1,9 @@
+[project]
+name = "pomodoro-python-exercise"
+version = "0.1.0"
+description = "Pomodoro Focus Timer — esercizio Python con SOLID + test"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
