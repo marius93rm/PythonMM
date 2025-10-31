@@ -1,4 +1,4 @@
-# Test automatici per gli esercizi `design-patterns-todo2`
+# Test automatici per gli esercizi `design-patterns-todo-python`
 
 Questa cartella contiene una suite di test pronta all'uso per verificare le
 soluzioni degli esercizi. I test utilizzano [pytest](https://pytest.org), uno
@@ -16,17 +16,17 @@ pip install pytest
 ## Come eseguire i test
 
 Posizionati nella cartella principale del repository (quella che contiene la
-sottocartella `design-patterns-todo2-python`) ed esegui:
+sottocartella `esercizi/design-patterns-todo-python`) ed esegui:
 
 ```bash
-pytest design-patterns-todo2-python/tests
+pytest esercizi/design-patterns-todo-python/tests
 ```
 
 Il comando eseguirà tutti i test presenti nella cartella. In alternativa puoi
 lanciare un singolo file di test, ad esempio:
 
 ```bash
-pytest design-patterns-todo2-python/tests/behavioral/test_strategy_pattern.py
+pytest esercizi/design-patterns-todo-python/tests/behavioral/test_strategy_pattern.py
 ```
 
 I test sono organizzati in tre sottocartelle (`behavioral`, `creational`,

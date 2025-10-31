@@ -1,8 +1,8 @@
 """Configurazione condivisa per i test.
 
 Rende importabili i moduli degli esercizi aggiungendo la cartella principale
-`design-patterns-todo2-python` al `sys.path` di Python durante l'esecuzione di
-pytest.
+`esercizi/design-patterns-todo-python` al `sys.path` di Python durante
+l'esecuzione di pytest.
 """
 
 from __future__ import annotations

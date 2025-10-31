@@ -159,7 +159,7 @@ class LetturaSensore:
 
 ### 3.2 Pattern creazionali (Singleton, Factory, Builder, Prototype, Abstract Factory)
 
-La cartella `design-patterns-todo2-python/creational` contiene scheletri, test e soluzioni. L'esempio seguente mostra un Singleton configurato:
+La cartella `esercizi/design-patterns-todo-python/creational` contiene scheletri, test e soluzioni. L'esempio seguente mostra un Singleton configurato:
 
 ```python
 class AppConfig:
@@ -238,7 +238,7 @@ class TextFormatter:
 
 ### 3.5 Principi SOLID e refactoring
 
-Nel modulo SensoriMonitor.TDD il percorso guida il refactor orientato a SRP, inversione delle dipendenze e riduzione delle duplicazioni. Ogni milestone suggerisce refactoring graduali protetti dai test.
+Nel modulo `esercizi/SensoriMonitor.TDD` il percorso guida il refactor orientato a SRP, inversione delle dipendenze e riduzione delle duplicazioni. Ogni milestone suggerisce refactoring graduali protetti dai test.
 
 ---
 
@@ -263,7 +263,7 @@ def test_aggiungi_lettura(monitor):
 
 ### 4.2 Ciclo TDD (Red → Green → Refactor)
 
-Il progetto `SensoriMonitor.TDD` è organizzato in milestone che impongono la sequenza TDD:
+Il progetto `esercizi/SensoriMonitor.TDD` è organizzato in milestone che impongono la sequenza TDD:
 
 1. Scrivi un test con `TODO`.
 2. Osserva il fallimento (Red).
