@@ -101,6 +101,11 @@ PYTHONMM/
 │   ├── solutions/
 │   └── tests/
 │
+├── 📂 SensoriMonitor.TDD/    # Percorso TDD su monitoraggio sensori IoT
+│   ├── README.md
+│   ├── src/
+│   └── tests/
+│
 └── 📖 README.md
 ```
 
@@ -123,6 +128,7 @@ PYTHONMM/
 | 09 — Logger universale | Pattern Singleton e logging condiviso | `esercizi/09-logger-universale`, slide 05-06 |
 | 10 — Pomodoro | Applicazione Pomodoro con timer e interfaccia testuale | `esercizi/10-PomodoroPythonExercise`, materiali extra |
 | 11 — Design pattern GoF | Pattern creazionali, strutturali e comportamentali | `design-patterns-todo2-python`, `design-patterns-todo2-python/solutions`, slide 04-05 |
+| 12 — SensoriMonitor TDD | Test-Driven Development su monitor IoT e notifiche | `SensoriMonitor.TDD`, `SensoriMonitor.TDD/tests`, slide 06-automazione-testing.pdf |
 
 ---
 
