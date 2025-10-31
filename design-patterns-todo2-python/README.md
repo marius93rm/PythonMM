@@ -1,4 +1,4 @@
-# Esercizio TODO – Design Pattern GoF (Seconda Parte)
+# Esercizio TODO – Design Pattern GoF
 
 ## Perché studiamo i pattern
 I design pattern della "Gang of Four" rappresentano un linguaggio comune per discutere soluzioni collaudate a problemi ricorrenti nello sviluppo software orientato agli oggetti. Impararli significa acquisire esempi concreti di come strutturare codice flessibile, manutenibile e pronto all'evoluzione dei requisiti. Questa repository ti offre un percorso guidato per allenarti su ogni pattern, passando dalla teoria all'implementazione.

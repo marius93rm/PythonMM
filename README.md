@@ -93,10 +93,18 @@ PYTHONMM/
 │   ├── oop2altro.pdf
 │   └── pjwt.py
 │
+├── 📂 design-patterns-todo2-python/  # Laboratorio sui Design Pattern GoF
+│   ├── README.md
+│   ├── creational/
+│   ├── structural/
+│   ├── behavioral/
+│   ├── solutions/
+│   └── tests/
+│
 └── 📖 README.md
 ```
 
-📌 Ogni risorsa porta un **prefisso numerico** che indica l'ordine consigliato di studio: le slide guidano la teoria mentre le cartelle in `esercizi/` raccolgono attività pratiche, supporti PDF e soluzioni complete.
+📌 Ogni risorsa porta un **prefisso numerico** che indica l'ordine consigliato di studio: le slide guidano la teoria mentre le cartelle in `esercizi/` raccolgono attività pratiche, supporti PDF e soluzioni complete. Per i pattern GoF trovi scheletri e test nelle sottocartelle `creational/`, `structural/`, `behavioral/` e le soluzioni commentate in `design-patterns-todo2-python/solutions/`.
 
 ---
 
@@ -114,6 +122,37 @@ PYTHONMM/
 | 08 — To-Do | Gestione attività e milestone applicative | `esercizi/08-todo`, slide 07 |
 | 09 — Logger universale | Pattern Singleton e logging condiviso | `esercizi/09-logger-universale`, slide 05-06 |
 | 10 — Pomodoro | Applicazione Pomodoro con timer e interfaccia testuale | `esercizi/10-PomodoroPythonExercise`, materiali extra |
+| 11 — Design pattern GoF | Pattern creazionali, strutturali e comportamentali | `design-patterns-todo2-python`, `design-patterns-todo2-python/solutions`, slide 04-05 |
+
+---
+
+## 🧱 Design Pattern GoF – panoramica esercizi
+
+| Esercizio | Argomento | Test automatici | Slide di riferimento |
+| --- | --- | --- | --- |
+| Singleton (`design-patterns-todo2-python/creational/singleton_pattern.py`) | Configurazione globale e istanza unica | Sì (`design-patterns-todo2-python/tests/creational/test_singleton_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Factory Method (`design-patterns-todo2-python/creational/factory_method_pattern.py`) | Creazione delegata a sottoclassi specializzate | Sì (`design-patterns-todo2-python/tests/creational/test_factory_method_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Abstract Factory (`design-patterns-todo2-python/creational/abstract_factory_pattern.py`) | Famiglie di componenti coerenti | Sì (`design-patterns-todo2-python/tests/creational/test_abstract_factory_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Builder (`design-patterns-todo2-python/creational/builder_pattern.py`) | Costruzione incrementale di oggetti complessi | Sì (`design-patterns-todo2-python/tests/creational/test_builder_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Prototype (`design-patterns-todo2-python/creational/prototype_pattern.py`) | Clonazione di oggetti esistenti | Sì (`design-patterns-todo2-python/tests/creational/test_prototype_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Adapter (`design-patterns-todo2-python/structural/adapter_pattern.py`) | Integrazione di interfacce incompatibili | Sì (`design-patterns-todo2-python/tests/structural/test_adapter_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Bridge (`design-patterns-todo2-python/structural/bridge_pattern.py`) | Separazione tra astrazione e implementazione | Sì (`design-patterns-todo2-python/tests/structural/test_bridge_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Composite (`design-patterns-todo2-python/structural/composite_pattern.py`) | Gestione uniforme di gerarchie ad albero | Sì (`design-patterns-todo2-python/tests/structural/test_composite_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Decorator (`design-patterns-todo2-python/structural/decorator_pattern.py`) | Estensioni dinamiche del comportamento | Sì (`design-patterns-todo2-python/tests/structural/test_decorator_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Facade (`design-patterns-todo2-python/structural/facade_pattern.py`) | Interfaccia semplificata verso sottosistemi complessi | Sì (`design-patterns-todo2-python/tests/structural/test_facade_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Flyweight (`design-patterns-todo2-python/structural/flyweight_pattern.py`) | Condivisione dello stato intrinseco | Sì (`design-patterns-todo2-python/tests/structural/test_flyweight_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Proxy (`design-patterns-todo2-python/structural/proxy_pattern.py`) | Controllo di accesso e lazy loading | Sì (`design-patterns-todo2-python/tests/structural/test_proxy_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Chain of Responsibility (`design-patterns-todo2-python/behavioral/chain_of_responsibility_pattern.py`) | Pipeline di handler per smistare richieste | Sì (`design-patterns-todo2-python/tests/behavioral/test_chain_of_responsibility_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Command (`design-patterns-todo2-python/behavioral/command_pattern.py`) | Azioni incapsulate e history dei comandi | Sì (`design-patterns-todo2-python/tests/behavioral/test_command_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Interpreter (`design-patterns-todo2-python/behavioral/interpreter_pattern.py`) | Valutazione di una grammatica booleana | Sì (`design-patterns-todo2-python/tests/behavioral/test_interpreter_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Iterator (`design-patterns-todo2-python/behavioral/iterator_pattern.py`) | Navigazione controllata di collezioni | Sì (`design-patterns-todo2-python/tests/behavioral/test_iterator_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Mediator (`design-patterns-todo2-python/behavioral/mediator_pattern.py`) | Comunicazione centralizzata fra componenti | Sì (`design-patterns-todo2-python/tests/behavioral/test_mediator_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Memento (`design-patterns-todo2-python/behavioral/memento_pattern.py`) | Snapshot e ripristino dello stato | Sì (`design-patterns-todo2-python/tests/behavioral/test_memento_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Observer (`design-patterns-todo2-python/behavioral/observer_pattern.py`) | Notifiche automatiche a più osservatori | Sì (`design-patterns-todo2-python/tests/behavioral/test_observer_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| State (`design-patterns-todo2-python/behavioral/state_pattern.py`) | Comportamenti dipendenti dallo stato interno | Sì (`design-patterns-todo2-python/tests/behavioral/test_state_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Strategy (`design-patterns-todo2-python/behavioral/strategy_pattern.py`) | Algoritmi intercambiabili a runtime | Sì (`design-patterns-todo2-python/tests/behavioral/test_strategy_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Template Method (`design-patterns-todo2-python/behavioral/template_method_pattern.py`) | Scheletro di algoritmo con passi personalizzabili | Sì (`design-patterns-todo2-python/tests/behavioral/test_template_method_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
+| Visitor (`design-patterns-todo2-python/behavioral/visitor_pattern.py`) | Operazioni esterne su strutture dati complesse | Sì (`design-patterns-todo2-python/tests/behavioral/test_visitor_pattern.py`) | slide/04-programmazione-oggetti.pdf<br>slide/05-python-avanzato-argomenti-chiave.pdf |
 
 ---
 
