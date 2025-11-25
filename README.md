@@ -1,5 +1,14 @@
 # 📚 Corso Python — Materiale & Esercizi
 
+## 🎯 Argomenti trattati
+
+- Fondamenti di Python: sintassi base, funzioni, generatori e list comprehension.
+- Programmazione a oggetti e principi SOLID applicati a mini–progetti.
+- Design pattern GoF con esercizi guidati e test automatici.
+- Automazione, testing e TDD per applicazioni robuste.
+- Sviluppo web e API (HTTP, integrazioni e parsing di risposte JSON).
+- Analisi dati con Pandas, visualizzazione con Matplotlib e SQL di base.
+
 ![Python](https://img.shields.io/badge/Python-3.12-blue.svg?logo=python\&logoColor=white)
 ![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-ff69b4.svg)
 
